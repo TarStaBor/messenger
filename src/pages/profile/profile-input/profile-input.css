@@ -1,0 +1,33 @@
+.profile-input {
+    width: 100%;
+}
+
+.profile-input__container {
+    display: flex;
+    height: 38px;
+    flex-direction: column;
+    align-content: flex-end;
+
+}
+
+.profile-input__label {
+    position: absolute;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 13px;
+    text-align: left;
+}
+
+.profile-input__element {
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 0 0 10px;
+    text-align: right;
+    color: var(--text-color);
+}
+
+.profile-input__element:focus-visible {
+    outline: none;
+}

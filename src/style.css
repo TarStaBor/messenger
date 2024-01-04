@@ -1,0 +1,39 @@
+@import "/src/components/button/button.css";
+@import "/src/components/form-auth/form-auth.css";
+@import "/src/components/input/input.css";
+@import "/src/components/title/title.css";
+@import "/src/components/link/link.css";
+@import "/src/pages/login/login.css";
+@import "/src/pages/chat/chat.css";
+@import "/src/pages/chat/right-side/right-side.css";
+@import "/src/pages/chat/left-side/left-side-header/left-side-header.css";
+@import "/src/pages/chat/left-side/chat-card/chat-card.css";
+@import "/src/pages/error-page/error-page.css";
+@import "/src/pages/profile/profile.css";
+@import "/src/pages/profile/profile-input/profile-input.css";
+@import "/src/pages/profile/profile-buttons/profile-button.css";
+
+:root {
+  --main-color: #3369f3;
+  --second-color: #e4edfd;
+  --error-color: #ff2f2f;
+  --text-color: #1e1e1e;
+  --text-secondary-color: #999;
+  --border-color: #EAEAEA;
+  --background-color: #EFEFEF;
+  --background-secondary-color: #FBFBFB;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+margin: 0;
+}
+
+.link-opacity {
+  transition: opacity 0.5s;
+  cursor: pointer;
+}
+
+.link-opacity:hover {
+  opacity: 0.6;
+}

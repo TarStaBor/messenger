@@ -1,0 +1,15 @@
+<div class="input" >
+    <div class="input__container">
+        <label class="input__label" for="{{name}}">{{label}}</label>
+            <input
+                    class="input__element input__element_{{error}}"
+                    placeholder=""
+                    type="{{password}}"
+                    value="{{value}}"
+                    name="{{name}}"
+                    id="{{name}}"
+            />
+        <div class=" input__text-error {{#if errorText}}input__text-error_visible{{/if}}">{{errorText}}</div>
+    </div>
+</div>
+

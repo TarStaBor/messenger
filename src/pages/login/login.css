@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container__inputs {
+    min-height: 200px;
+    margin-bottom: 47px;
+}

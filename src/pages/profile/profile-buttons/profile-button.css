@@ -1,0 +1,17 @@
+.profile-button {
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-button__label {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 13px;
+    text-align: left;
+    color: var(--main-color);
+    margin: 10px 0;
+}
+
+.profile-button__label_exit {
+    color: var(--error-color);
+}

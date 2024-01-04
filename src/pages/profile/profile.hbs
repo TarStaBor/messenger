@@ -1,0 +1,37 @@
+<div class="profile">
+    <div class="profile__left-side link-opacity" page="chat">
+        <img class="profile__back-arrow" page="chat" alt="back-arrow" src={{backArrow}} />
+
+    </div>
+    <div class="profile__right-side">
+        <div class="profile__content">
+            <div class="profile__avatar-section">
+                <div class="profile__profile_overlay">
+                    <h1 class="profile__avatar-title">Поменять
+                        аватар</h1>
+                </div>
+                <div class="profile__avatar ">
+                    <img class="profile__avatar_icon" alt="avatar" src={{avatar}} />
+                </div>
+
+                <h1 class="profile__avatar-subtitle">Иван</h1>
+            </div>
+
+            <form class="profile__form">
+                {{> ProfileInput name="email" label="Почта" value="pochta@yandex.ru"}}
+                {{> ProfileInput name="login" label="Логин" value="ivanivanov"}}
+                {{> ProfileInput name="first_name" label="Имя" value="Иван"}}
+                {{> ProfileInput name="second_name" label="Фамилия" value="Иванов"}}
+                {{> ProfileInput name="display_name" label="Имя в чате" value="Иван"}}
+                {{> ProfileInput name="phone" label="Телефон" value="+7 (909) 967 30 30"}}
+            </form>
+
+            {{> ProfileButton label="Изменить данные"}}
+            {{> ProfileButton label="Изменить пароль"}}
+            {{> ProfileButton label="Выйти" page="login" exit="exit"}}
+        </div>
+    </div>
+</div>
+
+
+
