@@ -1,0 +1,9 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 30px 30px;
+    width: 340px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.14);
+    border-radius: 12px;
+    box-sizing: border-box;
+}

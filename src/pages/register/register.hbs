@@ -1,0 +1,16 @@
+<div class="container">
+    {{#> FormAuth}}
+        {{> Title title="Регистрация" }}
+        <div class="container__inputs">
+        {{> Input name="email" label="Почта" value="pochta@yandex.ru"}}
+        {{> Input name="login" label="Логин" value="ivanivanov"}}
+        {{> Input name="first_name" label="Имя" value="Иван"}}
+        {{> Input name="second_name" label="Фамилия" value="Иванов"}}
+        {{> Input name="phone" label="Телефон" value="+7 (909) 967 30 30"}}
+        {{> Input name="password" label="Пароль" password="password" error="error" value="••••••••••••"}}
+        {{> Input name="password" label="Пароль (еще раз)" password="password" error="error" value="••••••••••••" errorText='Пароли не совпадают'}}
+        </div>
+        {{> Button label="Зарегистрироваться" type="primary" page="register"}}
+        {{> Link label='Войти' page="login"}}
+    {{/FormAuth}}
+</div>

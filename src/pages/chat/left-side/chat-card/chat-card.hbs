@@ -1,0 +1,13 @@
+   <div class="chat-card link-opacity">
+       <div class="chat-card__avatar"></div>
+       <div class="chat-card__info-section">
+              <div class="chat-card__chat">
+                  <p class="chat-card__chat-name">{{chatName}}</p>
+                  <p class="chat-card__last-message">{{lastMessage}}</p>
+              </div>
+              <div class="chat-card__info">
+                  <p class="chat-card__time">{{time}}</p>
+                  <div class="chat-card__count-unread {{#if countUnread}}chat-card__count-unread_visible{{/if}}">{{countUnread}}</div>
+              </div>
+       </div>
+   </div>

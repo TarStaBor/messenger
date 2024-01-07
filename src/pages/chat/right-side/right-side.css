@@ -1,0 +1,8 @@
+.right-side {
+    text-align: center;
+    color: var(--text-secondary-color);
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}

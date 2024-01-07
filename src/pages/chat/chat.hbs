@@ -1,0 +1,11 @@
+    <div class="chat">
+        <div class="left-side-container">
+            {{> LeftSideHeader}}
+    {{#each (chats)}}
+            {{> ChatCard}}
+    {{/each}}
+        </div>
+        <div class="right-side-container">
+            {{> RightSide}}
+        </div>
+    </div>
