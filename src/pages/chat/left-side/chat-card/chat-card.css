@@ -32,8 +32,7 @@
 }
 
 .chat-card__chat-name {
-    margin: 0;
-    margin-bottom: 4px;
+    margin: 0 0 4px;
     font-size: 13px;
     font-weight: 600;
     line-height: 13px;

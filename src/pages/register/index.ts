@@ -1,1 +1,1 @@
-export { default as Register } from './register.hbs?raw';
+export { default as Register } from "./register.hbs?raw";

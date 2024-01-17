@@ -1,7 +1,6 @@
-export { default as LeftSideHeader } from './left-side-header.hbs?raw';
 import Handlebars from "handlebars";
-import Arrow from '../../../../assets/arrow.svg'
+import Arrow from "../../../../assets/arrow.svg";
 
-Handlebars.registerHelper('arrow', () => {
-    return Arrow
-})
+export { default as LeftSideHeader } from "./left-side-header.hbs?raw";
+
+Handlebars.registerHelper("arrow", () => Arrow);
