@@ -1,11 +1,17 @@
     <div class="chat">
         <div class="left-side-container">
-            {{> LeftSideHeader}}
-    {{#each (chats)}}
-            {{> ChatCard}}
-    {{/each}}
+            <div>
+            {{{ LeftSideHeader }}}
+            {{#ChatList chats=chats}}
+
+            {{/ChatList}}
+            </div>
+            <div>
+            {{{ Button label="Посмотреть страницу 404" type="primary" onClick=handleError404}}}
+            {{{ Button label="Посмотреть страницу 500" type="primary" onClick=handleError500}}}
+            </div>
         </div>
         <div class="right-side-container">
-            {{> RightSide}}
+        {{{ RightSide isActiveChat=isActiveChat activeChat=activeChat}}}
         </div>
     </div>

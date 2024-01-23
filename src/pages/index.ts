@@ -1,6 +1,10 @@
-export { LoginPage } from "./login/index";
-export { Chat } from "./chat/index";
-export { Register } from "./register/index";
-export { RightSide } from "./chat/right-side/index";
-export { ErrorPage } from "./error-page/index";
-export { Profile } from "./profile/index";
+export { LoginPage } from "./login/login";
+export { Register } from "./register/register";
+export { RightSide } from "./chat/right-side/right-side";
+export { LeftSideHeader } from "./chat/left-side/left-side-header/left-side-header";
+export { ErrorPage404 } from "./error-page404/error-page404";
+export { ErrorPage500 } from "./error-page500/error-page500";
+export { Chat } from "./chat/chat";
+export { Profile } from "./profile/profile";
+export { EditPasswordPage } from "./profile/edit-password/edit-password";
+export { EditProfilePage } from "./profile/edit-profile/edit-profile";

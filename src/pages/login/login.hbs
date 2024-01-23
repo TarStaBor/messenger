@@ -1,11 +1,18 @@
 <main class="container">
     {{#> FormAuth}}
-        {{> Title title="Вход" }}
-        <div class="container__inputs">
-        {{> Input name="login" label="Логин" value="ivanivanov" }}
-        {{> Input name="password" label="Пароль" password="password" value="••••••••••••"}}
-        </div>
-        {{> Button label="Авторизоваться" type="primary" page="chat"}}
-        {{> Link label='Нет аккаунта?' page="register"}}
+        {{{ Title title="Вход" }}}
+    <div class="container__inputs">
+        {{{ InputField name="login" label="Логин" id="login" type="text" env="auth" ref="login" validate=validate.login}}}
+        {{{ InputField name="password" label="Пароль" type="password" env="auth" ref="password" validate=validate.password}}}
+    </div>
+        {{{ Button
+              label="Авторизоваться"
+              type="primary"
+              onClick=handleLogin
+        }}}
+        {{{ Link
+              label="Нет аккаунта?"
+              onClick=handleRegister
+        }}}
     {{/FormAuth}}
 </main>

@@ -1,17 +1,20 @@
 @import "/src/components/button/button.css";
 @import "/src/components/form-auth/form-auth.css";
 @import "/src/components/input/input.css";
+@import "/src/components/inputField/inputField.css";
 @import "/src/components/title/title.css";
 @import "/src/components/link/link.css";
+@import "/src/components/profile-button/profile-button.css";
+@import "/src/components/errorValid/errorValid.css";
+@import "/src/components/chat-card/chat-card.css";
+@import "/src/components/chatList/chatList.css";
+@import "/src/components/message/message.css";
 @import "/src/pages/login/login.css";
 @import "/src/pages/chat/chat.css";
 @import "/src/pages/chat/right-side/right-side.css";
 @import "/src/pages/chat/left-side/left-side-header/left-side-header.css";
-@import "/src/pages/chat/left-side/chat-card/chat-card.css";
-@import "/src/pages/error-page/error-page.css";
+@import "/src/pages/error-page404/error-page404.css";
 @import "/src/pages/profile/profile.css";
-@import "/src/pages/profile/profile-input/profile-input.css";
-@import "/src/pages/profile/profile-buttons/profile-button.css";
 
 :root {
   --main-color: #3369f3;

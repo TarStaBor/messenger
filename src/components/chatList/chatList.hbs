@@ -1,0 +1,13 @@
+<div class="chatList {{#if chatName}}chatList__active{{/if}}">
+    {{#each chats }}
+        <div class="chatList__card">
+        {{{ ChatCard
+                chatName=this.chatName
+                messages=this.messages
+                time=this.time
+                countUnread=this.countUnread
+                isActive=this.isActive
+        }}}
+        </div>
+    {{/each}}
+</div>
