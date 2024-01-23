@@ -13,7 +13,6 @@ export class MessageList extends Block<IMessageList> {
   constructor(props: IMessageList) {
     super({
       ...props,
-      parseMessages: props.activeChat.messages,
     });
   }
 
