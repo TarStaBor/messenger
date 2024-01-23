@@ -24,7 +24,7 @@ registerComponent("LeftSideHeader", LeftSideHeader.LeftSideHeader);
 document.addEventListener("DOMContentLoaded", () => navigate(PAGES.LOGIN));
 
 document.addEventListener("click", (e) => {
-  // @ts-ignore
+  // @ts-expect-error
   const page = e.target.getAttribute("page");
   if (page) {
     if (page === "profile") navigate(PAGES.PROFILE_PAGE);

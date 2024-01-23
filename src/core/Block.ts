@@ -52,7 +52,7 @@ class Block<Props extends object, Refs extends RefType = RefType> {
 
     if (!events) return;
     Object.keys(events).forEach((eventName) => {
-      // @ts-ignore
+      // @ts-expect-error
       this._element!.addEventListener(eventName, events[eventName]);
     });
   }
@@ -63,7 +63,7 @@ class Block<Props extends object, Refs extends RefType = RefType> {
     if (!events || !this._element) return;
 
     Object.keys(events).forEach((eventName) => {
-      // @ts-ignore
+      // @ts-expect-error
       this._element!.removeEventListener(eventName, events[eventName]);
     });
   }
@@ -103,7 +103,7 @@ class Block<Props extends object, Refs extends RefType = RefType> {
     }
   }
 
-  // @ts-ignore
+  // @ts-expect-error
   protected componentDidUpdate(oldProps: Props, newProps: Props) {
     return true;
   }
