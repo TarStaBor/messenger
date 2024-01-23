@@ -13,14 +13,11 @@ export class MessageList extends Block<IMessageList> {
   constructor(props: IMessageList) {
     super({
       ...props,
-      // @ts-ignore
       parseMessages: props.activeChat.messages,
     });
   }
 
   protected render(): string {
-    // @ts-ignore
-    console.log(this.props.parseMessages);
     return template;
   }
 }

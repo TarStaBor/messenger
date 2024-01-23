@@ -14,7 +14,6 @@ export class ChatCard extends Block<IChatCard> {
   constructor(props: IChatCard) {
     super({
       ...props,
-      // @ts-ignore
       lastMessage: props.messages[props.messages.length - 1].message,
     });
   }
