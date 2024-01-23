@@ -5,7 +5,7 @@
             <div class="conversation__header-avatar"></div>
             <p>{{activeChat.chatName}}</p>
             </div>
-            <img class="conversation__header-dots link-opacity" src="/src/assets/dots.svg" alt="dots"/>
+            <img class="conversation__header-dots link-opacity" src="/static/dots.svg" alt="dots"/>
         </div>
 
         <div class="conversation__content">
@@ -13,7 +13,7 @@
             <div class="conversation__my-message">
                 <div class="conversation__my-message-content link-opacity">
                     <p class="conversation__my-message-text">Привет</p>
-                    <img class="conversation__my-message-read-icon" src="/src/assets/read-icon.svg" alt="Прочитано"/>
+                    <img class="conversation__my-message-read-icon" src="/static/read-icon.svg" alt="Прочитано"/>
                     <p class="conversation__my-message-time">12:00</p>
                 </div>
             </div>
@@ -28,15 +28,15 @@
             <div class="conversation__my-message link-opacity">
                 <div class="conversation__my-message-content">
                     <p class="conversation__my-message-text">Как дела?</p>
-                    <img class="conversation__my-message-read-icon" src="/src/assets/read-icon.svg" alt="Прочитано"/>
+                    <img class="conversation__my-message-read-icon" src="/static/read-icon.svg" alt="Прочитано"/>
                     <p class="conversation__my-message-time">12:03</p>
                 </div>
             </div>
         </div>
 
         <div class="conversation__footer">
-            <img class="conversation__footer-paper-clip link-opacity" src="/src/assets/paper-clip.svg" alt="add file"/>
+            <img class="conversation__footer-paper-clip link-opacity" src="/static/paper-clip.svg" alt="add file"/>
             {{{ InputField  type="text" name="message" env="chat" ref="message" placeholder="Сообщение" validate=validate.message}}}
-            <img class="conversation__footer-send-icon link-opacity" src="/src/assets/send-arrow.svg" alt="send message"/>
+            <img class="conversation__footer-send-icon link-opacity" src="/static/send-arrow.svg" alt="send message"/>
         </div>
     </div>
