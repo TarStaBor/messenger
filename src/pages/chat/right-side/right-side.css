@@ -19,7 +19,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .conversation__header-user {
@@ -69,7 +68,7 @@
     width: content-box;
     padding: 11px;
     background: var(--second-color);
-    border-radius: 12px 12px 0 12px;
+    border-radius: 12px 12px 0;
     align-self: end;
 }
 
@@ -99,7 +98,7 @@
     width: min-content;
     padding: 11px;
     background: var(--background-color);
-    border-radius: 0px 12px 12px 12px;
+    border-radius: 0 12px 12px;
     align-items: start;
 }
 
