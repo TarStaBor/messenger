@@ -47,4 +47,3 @@ export function registerComponent<Props extends object, R extends {}>(
         },
     );
 }
-
