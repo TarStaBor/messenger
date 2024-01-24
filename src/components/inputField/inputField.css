@@ -1,0 +1,41 @@
+.auth-input {
+    margin-bottom: 16px;
+}
+
+.auth-input__container {
+    display: flex;
+    height: 38px;
+    flex-direction: column;
+    align-content: flex-end;
+}
+
+.auth-input__label {
+    color: var(--text-secondary-color);
+    font-size: 9px;
+    font-weight: 500;
+    user-select: none;
+    margin-bottom: 8px;
+}
+
+.profile-input {
+    width: 100%;
+}
+
+.profile-input__container {
+    display: flex;
+    height: 38px;
+    flex-direction: column;
+    align-content: flex-end;
+}
+
+.profile-input__label {
+    position: absolute;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 13px;
+    text-align: left;
+}
+
+.chat-input {
+    width: 100%;
+}

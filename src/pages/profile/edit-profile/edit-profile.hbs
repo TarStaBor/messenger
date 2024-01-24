@@ -1,0 +1,99 @@
+<main class="profile">
+
+    <div class="profile__left-side link-opacity" page="profile" >
+        <img class="profile__back-arrow" page="profile" alt="back-arrow" src="/src/assets/back-arrow.svg"/>
+    </div>
+
+
+    <div class="profile__right-side">
+        <div class="profile__content">
+            <div class="profile__avatar-section">
+
+                <div class="profile__profile_overlay">
+                    <h1 class="profile__avatar-title">Поменять
+                        аватар</h1>
+                </div>
+
+                <div class="profile__avatar ">
+                    <img class="profile__avatar_icon" alt="avatar" src=/src/assets/avatar.svg />
+                </div>
+
+        </div>
+
+        <form class="profile__form">
+                {{{
+                 InputField
+                        name="email"
+                        label="Почта"
+                        type="email"
+                        env="profile"
+                        placeholder="pochta@yandex.ru"
+                        ref="email"
+                        validate=validate.email
+                }}}
+
+                {{{
+                InputField
+                        name="login"
+                        label="Логин"
+                        type="text"
+                        env="profile"
+                        placeholder="ivanivanov"
+                        ref="login"
+                        validate=validate.login
+                }}}
+
+                {{{
+                InputField
+                        name="first_name"
+                        label="Имя"
+                        type="text"
+                        env="profile"
+                        placeholder="Иван"
+                        ref="first_name"
+                        validate=validate.first_name
+                }}}
+
+                {{{
+                InputField
+                        name="second_name"
+                        label="Фамилия"
+                        type="text"
+                        env="profile"
+                        placeholder="Иванов"
+                        ref="second_name"
+                        validate=validate.second_name
+                }}}
+
+                {{{
+                InputField
+                        name="display_name"
+                        label="Имя в чате"
+                        type="text"
+                        env="profile"
+                        placeholder="Иван"
+                        ref="display_name"
+                        validate=validate.display_name
+                }}}
+
+                {{{
+                InputField
+                        name="phone"
+                        label="Телефон"
+                        type="text"
+                        env="profile"
+                        placeholder="+7 (909) 967 30 30"
+                        ref="phone"
+                        validate=validate.phone
+                }}}
+                </form>
+
+                {{{
+                Button
+                        label="Сохранить"
+                        type="primary"
+                        onClick=handleSaveChangesClick
+                }}}
+            </div>
+        </div>
+</main>

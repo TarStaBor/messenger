@@ -33,6 +33,7 @@
     font-style: normal;
     font-weight: 500;
 }
+
 .left-side-header__input:focus-visible {
     outline: none;
 }

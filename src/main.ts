@@ -1,36 +1,35 @@
-import Handlebars from 'handlebars';
+import Handlebars from "handlebars";
+import * as Components from "./components";
+import { registerComponent } from "./core/registerComponent";
+import { PAGES, navigate } from "./core/navigate";
+import * as RightSide from "./pages/chat/right-side/right-side";
+import * as LeftSideHeader from "./pages/chat/left-side/left-side-header/left-side-header";
 
-import * as Components from './components';
-import * as Pages from './pages/index';
+Handlebars.registerPartial("FormAuth", Components.FormAuth);
 
-const pages: Record<string, [string, object?]>  = {
-    'login': [ Pages.LoginPage, {test: '123'} ],
-    'register': [ Pages.Register ],
-    'chat': [ Pages.Chat ],
-    'profile': [ Pages.Profile ],
-    'errorPage404': [ Pages.ErrorPage, {ErrorPageNumber: '404', ErrorPageText: 'Не туда попали'} ],
-    'errorPage500': [ Pages.ErrorPage, {ErrorPageNumber: '500', ErrorPageText: 'Мы уже фиксим'} ],
-};
+registerComponent("Button", Components.Button);
+registerComponent("ChatCard", Components.ChatCard);
+registerComponent("ChatList", Components.ChatList);
+registerComponent("Title", Components.Title);
+registerComponent("Link", Components.Link);
+registerComponent("Message", Components.Message);
+registerComponent("MessageList", Components.MessageList);
+registerComponent("InputField", Components.InputField);
+registerComponent("Input", Components.Input);
+registerComponent("ProfileButton", Components.ProfileButton);
+registerComponent("ErrorValid", Components.ErrorValid);
+registerComponent("RightSide", RightSide.RightSide);
+registerComponent("LeftSideHeader", LeftSideHeader.LeftSideHeader);
 
-Object.entries(Components).forEach(([ name, component ]) => {
-    Handlebars.registerPartial(name, <Handlebars.TemplateDelegate<any> | string>component);
-    });
+document.addEventListener("DOMContentLoaded", () => navigate(PAGES.LOGIN));
 
-function navigate(page: string) {
-    const [source, context] = pages[page];
-    const container = document.getElementById('app')!;
-    container.innerHTML = Handlebars.compile(source) (context);
-}
-
-document.addEventListener('DOMContentLoaded', () => navigate('login'));
-
-document.addEventListener('click', e => {
-//@ts-ignore
-    const page = e.target.getAttribute('page');
-    if (page) {
-        navigate(page);
-
-        e.preventDefault();
-        e.stopImmediatePropagation();
-    }
-})
+document.addEventListener("click", (e) => {
+  // @ts-expect-error: comment
+  const page = e.target.getAttribute("page");
+  if (page) {
+    if (page === "profile") navigate(PAGES.PROFILE_PAGE);
+    if (page === "chat") navigate(PAGES.CHAT);
+    e.preventDefault();
+    e.stopImmediatePropagation();
+  }
+});

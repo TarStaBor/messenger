@@ -6,6 +6,9 @@
 }
 
 .left-side-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin: 0;
     padding: 10px;
     min-width: 310px;
