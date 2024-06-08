@@ -1,23 +1,63 @@
 .button {
-    background-color: initial;
-    border: none;
-    font-weight: 500;
-    display: block;
     width: 100%;
-    padding: 12px 0;
+    height: 37px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 12px;
+    background: none;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
-    margin-bottom: 14px;
+    outline: none;
+    font: var(--text);
 }
 
-.button__primary {
-    background-color: var(--main-color);
-    color: white;
-    font-size: 13px;
+.button__with-icon {
+    width: 37px;
+    border-radius: 50%;
 }
 
-.button__link {
-    color: var(--main-color);
-    font-size: 11px;
-    text-align: center;
+.button__icon-last .mainButton__icon {
+    order: 1;
+}
+
+.button__align_left {
+    justify-content: flex-start;
+}
+
+.button__align_center {
+    justify-content: center;
+}
+
+.button__align_right {
+    justify-content: flex-end;
+}
+
+.button__variant_primary {
+    --color: var(--main-color);
+}
+
+.button__variant_medium {
+    --color: var(--text-secondary-color);
+}
+
+.button__variant_danger {
+    --color: var(--error-color);
+}
+
+.button__fill_solid {
+    color: var(--text-fill-color);
+    background: var(--color);
+}
+
+.button__fill_ghost {
+    color: var(--color);
+}
+
+.button__fill_link {
+    color: var(--color);
+    padding: 0;
 }

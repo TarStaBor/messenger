@@ -1,0 +1,20 @@
+.profilePage {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 64px auto;
+}
+
+.profilePage__leftSide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-secondary-color);
+    border-right: 1px solid var(--border-color);
+}
+
+.profilePage__rightSide {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

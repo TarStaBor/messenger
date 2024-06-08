@@ -1,0 +1,83 @@
+.chatListItem {
+    width: 100%;
+    padding: 12px 10px;
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+    position: relative;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    background-color: unset;
+    transition: background-color 0.2s ease-out;
+    outline: none;
+}
+
+.chatListItem:not(.chatListItem_active):hover {
+    background-color: var(--background-color);
+}
+
+.chatListItem_active {
+    background-color: var(--second-color);
+}
+
+.chatListItem__avatar {
+    width: 47px;
+    height: 47px;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.chatListItem__card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatListItem__info {
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+.chatListItem__name {
+    font: var(--h4);
+}
+
+.chatListItem__date {
+    flex-shrink: 0;
+    font: var(--text-caption);
+    color: var(--text-secondary-color);
+}
+
+.chatListItem__divider{
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.chatListItem__from {
+    font: var(--h5);
+    line-height: 1;
+    color: var(--text);
+}
+
+.chatListItem__text {
+    font: var(--text);
+    line-height: 1;
+    color: var(--text-secondary-color);
+}
+
+.chatListItem__counter {
+    min-width: 20px;
+    max-width: 45px;
+    height: 20px;
+    display: grid;
+    place-content: center;
+    border-radius: 10px;
+    background-color: var(--main-color);
+    font: var(--text-caption);
+    color: var(--text-fill-color);
+}
+

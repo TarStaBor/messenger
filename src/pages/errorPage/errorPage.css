@@ -1,0 +1,18 @@
+.errorPage {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    place-content: center center;
+}
+
+.errorPage__status {
+    margin-bottom: 10px;
+    font: var(--h1);
+    font-size: 40px;
+}
+
+.errorPage__errorText {
+    margin-bottom: 70px;
+    font: var(--h2);
+}
+

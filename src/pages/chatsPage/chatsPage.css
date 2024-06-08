@@ -1,0 +1,33 @@
+.chatsPage {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 325px auto;
+}
+
+.chatsPage__leftSide {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: repeat(3, 50px) 1fr;
+    background-color: var(--background-secondary-color);
+    border-right: 1px solid var(--border-color);
+}
+
+.chatsPage__buttonWrapper {
+    padding: 10px;
+}
+
+.chatsPage__rightSide {
+    height: 100vh;
+    margin: 0 20px;
+}
+
+.chatsPage__choice {
+    height: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.chatsPage__choiceText {
+    font: var(--text);
+    color: var(--text-secondary-color);
+}

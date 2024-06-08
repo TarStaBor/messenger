@@ -1,0 +1,19 @@
+.chatSearchInput {
+    padding: 10px;
+}
+
+.chatSearchInput__input {
+    height: 32px;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    color: var(--text-color);
+    font: var(--text);
+    background-color: var(--background-color);
+    text-align: center;
+    outline: none;
+}
+
+.chat-search-form__input:not(:placeholder-shown) {
+    text-align: left;
+}
