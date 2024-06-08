@@ -1,10 +1,3 @@
-import {
-    noCyrillicSymbols,
-    noNumbersOnly, validEmail,
-    validLoginSpecialSymbols, validNameSpecialSymbols, validNameStartsWithCapital, validNameSymbols,
-    validPassword, validPhone
-} from '../constants';
-
 export type Rule = (value: string) => boolean;
 export type ValidationRule = {
     rule: Rule;
@@ -13,6 +6,51 @@ export type ValidationRule = {
 
 const validLength: (min: number, max: number) => Rule = (min, max) => {
     return (value) => value.length >= min && value.length <= max;
+};
+
+const validNameSymbols: Rule = (value) => {
+    const regexp = /^[A-ZА-ЯЁa-zA-ZA-ЯЁа-яё-]+$/;
+    return regexp.test(value);
+};
+
+const validNameSpecialSymbols: Rule = (value) => {
+    const regexp = /^[a-zA-ZA-ЯЁа-яё-]+$/;
+    return regexp.test(value);
+};
+
+const validNameStartsWithCapital: Rule = (value) => {
+    const regexp = /^[A-ZА-ЯЁ]/;
+    return regexp.test(value);
+};
+
+const validLoginSpecialSymbols: Rule = (value) => {
+    const regexp = /^[a-zA-Z0-9_-]+$/;
+    return regexp.test(value);
+};
+
+const noCyrillicSymbols: Rule = (value) => {
+    const regexp = /^[^А-Яа-яЁё]+$/;
+    return regexp.test(value);
+};
+
+const noNumbersOnly: Rule = (value) => {
+    const regexp = /^[^0-9]+$/;
+    return regexp.test(value);
+};
+
+const validEmail: Rule = (value) => {
+    const regexp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return regexp.test(value);
+};
+
+const validPassword: Rule = (value) => {
+    const regexp = /^(?=.*[A-ZА-ЯЁ])(?=.*\d)/;
+    return regexp.test(value);
+};
+
+const validPhone: Rule = (value) => {
+    const regexp = /^\+?\d+$/;
+    return regexp.test(value);
 };
 
 export const loginValidationRules = [
