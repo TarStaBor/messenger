@@ -5,7 +5,7 @@ import {
     validPassword, validPhone
 } from '../constants';
 
-type Rule = (value: string) => boolean;
+export type Rule = (value: string) => boolean;
 export type ValidationRule = {
     rule: Rule;
     message: string;
