@@ -1,3 +1,5 @@
+import {Rule} from "./utils/validators";
+
 export const API = 'https://ya-praktikum.tech/';
 export const WS_HOST = 'wss://ya-praktikum.tech/';
 export const RESOURCES_HOST = 'https://ya-praktikum.tech/api/v2/resources/';

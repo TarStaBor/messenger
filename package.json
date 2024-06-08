@@ -10,20 +10,10 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 & stylelint \"src/**/*.css\"",
     "fix-lint": "eslint . --ext ts,tsx --fix & stylelint \"src/**/*.css\" --fix"
   },
-  "dependencies": {
-    "handlebars": "^4.7.8",
-    "nanoid": "^5.0.7"
-  },
-  "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.6.1"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.12.0",
     "@typescript-eslint/parser": "^7.12.0",
-    "eslint": "8.22.0",
+    "eslint": "^8.56.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^18.0.0",
     "eslint-config-prettier": "^9.1.0",
@@ -35,5 +25,9 @@
     "stylelint-config-standard": "^36.0.0",
     "typescript": "^5.4.5",
     "vite": "^5.2.13"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.8",
+    "nanoid": "^5.0.7"
   }
 }
