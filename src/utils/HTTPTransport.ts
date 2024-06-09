@@ -1,70 +1,115 @@
-// eslint-disable-next-line no-shadow
-enum METHODS {
-  GET = "GET",
-  POST = "POST",
-  PUT = "PUT",
-  DELETE = "DELETE",
-}
+import { API } from '../constants';
+import queryString from './queryString';
 
-type TOptions = {
-  method?: METHODS;
-  data?: Record<string, string>;
-  timeout?: number;
-  headers?: Record<string, string>;
-  tries?: number;
+const HTTP_METHODS = {
+    GET: 'GET',
+    POST: 'POST',
+    PUT: 'PUT',
+    PATCH: 'PATCH',
+    DELETE: 'DELETE',
+} as const;
+
+type HTTPMethod = keyof typeof HTTP_METHODS;
+
+type Options = {
+    method: HTTPMethod;
+    data?: PlainObject | FormData;
+    headers?: Record<string, string>;
+    timeout?: number;
+    withCredentials?: boolean;
 };
 
-const queryStringify = (data: Record<string, string>) => {
-  if (typeof data !== "object") {
-    throw new Error("Data must be object");
-  }
-  const keys = Object.keys(data);
-  return keys.reduce(
-    (result, key, index) => `${result}${key}=${data[key]}${index < keys.length - 1 ? "&" : ""}`,
-    "?",
-  );
-};
+type OptionsWithoutMethod = Omit<Options, 'method'>;
 
-type THTTPMethod = (url: string, options?: TOptions) => Promise<unknown>;
+type HTTPTransportMethod = (url: string, options?: OptionsWithoutMethod) => Promise<XMLHttpRequest>;
 
 export default class HTTPTransport {
-  get: THTTPMethod = (url, options = {}) => this.request(url, { ...options, method: METHODS.GET }, options.timeout);
+    private path: string;
 
-  post: THTTPMethod = (url, options = {}) => this.request(url, { ...options, method: METHODS.POST }, options.timeout);
+    constructor(apiRoute: string) {
+        this.path = API + apiRoute;
+    }
 
-  put: THTTPMethod = (url, options = {}) => this.request(url, { ...options, method: METHODS.PUT }, options.timeout);
+    get: HTTPTransportMethod = (url, options = {}) => {
+        return this.request(
+            url,
+            { ...options, method: HTTP_METHODS.GET },
+            options.timeout,
+            options.withCredentials
+        );
+    };
 
-  delete: THTTPMethod = (url, options = {}) => this.request(url, { ...options, method: METHODS.DELETE }, options.timeout);
+    post: HTTPTransportMethod = (url, options = {}) => {
+        return this.request(
+            url,
+            { ...options, method: HTTP_METHODS.POST },
+            options.timeout,
+            options.withCredentials
+        );
+    };
 
-  request = (url: string, options: TOptions = {}, timeout = 5000) => {
-    const { headers = {}, method, data } = options;
+    put: HTTPTransportMethod = (url, options = {}) => {
+        return this.request(
+            url,
+            { ...options, method: HTTP_METHODS.PUT },
+            options.timeout,
+            options.withCredentials
+        );
+    };
 
-    return new Promise((resolve, reject) => {
-      if (!method) {
-        // eslint-disable-next-line prefer-promise-reject-errors
-        reject("No method");
-        return;
-      }
-      const xhr = new XMLHttpRequest();
-      const isGet = method === METHODS.GET;
+    delete: HTTPTransportMethod = (url, options = {}) => {
+        return this.request(
+            url,
+            { ...options, method: HTTP_METHODS.DELETE },
+            options.timeout,
+            options.withCredentials
+        );
+    };
 
-      xhr.open(method, isGet && !!data ? url + queryStringify(data) : url);
+    request(
+        url: string,
+        options: Options = { method: HTTP_METHODS.GET },
+        timeout = 5000,
+        withCredentials = true
+    ): Promise<XMLHttpRequest> {
+        const { data, method, headers = {} } = options;
 
-      Object.keys(headers).forEach((key) => {
-        xhr.setRequestHeader(key, headers[key]);
-      });
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
 
-      xhr.onload = () => resolve(xhr);
-      xhr.onabort = reject;
-      xhr.onerror = reject;
-      xhr.timeout = timeout;
-      xhr.ontimeout = reject;
+            let urlWithBasepathAndParams = this.path + url;
+            if (method === HTTP_METHODS.GET && data && !(data instanceof FormData)) {
+                urlWithBasepathAndParams = `${url}${queryString(data)}`;
+            }
 
-      if (isGet || !data) {
-        xhr.send();
-      } else {
-        xhr.send(JSON.stringify(data));
-      }
-    });
-  };
+            xhr.open(method, urlWithBasepathAndParams);
+
+            if (data && !(data instanceof FormData)) {
+                headers['Content-Type'] = 'application/json';
+            }
+
+            Object.keys(headers).forEach((key) => {
+                xhr.setRequestHeader(key, headers[key]);
+            });
+
+            xhr.timeout = timeout;
+
+            xhr.onload = () => {
+                resolve(xhr);
+            };
+
+            xhr.withCredentials = withCredentials;
+            xhr.onabort = reject;
+            xhr.onerror = () => reject();
+            xhr.ontimeout = reject;
+
+            if (method === HTTP_METHODS.GET || !data) {
+                xhr.send();
+            } else if ((headers['Content-Type'] === 'application/json')) {
+                xhr.send(JSON.stringify(data));
+            } else {
+                xhr.send(data as FormData);
+            }
+        });
+    }
 }

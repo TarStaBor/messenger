@@ -1,0 +1,1 @@
+export { SetUserAvatarButton } from './setUserAvatarButton';

@@ -1,0 +1,51 @@
+.changeAvatar {
+    width: 280px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.changeAvatar__title {
+    margin: 0 0 40px;
+    text-align: center;
+    font: var(--h2);
+}
+
+.changeAvatar__content {
+    display: grid;
+    place-items: center;
+    margin-bottom: 45px;
+}
+
+.changeAvatar__select {
+    width: 140px;
+    display: block;
+    font: var(--text);
+    color: var(--main-color);
+    text-decoration: underline;
+    text-align: center;
+    cursor: pointer;
+}
+
+.changeAvatar__success {
+    color: var(--text-secondary-color);
+    text-align: center;
+    font: var(--text-caption);
+}
+
+.changeAvatar__bottom {
+    position: relative;
+    margin-top: auto;
+    padding-bottom: 25px;
+}
+
+.changeAvatar__error {
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    color: var(--error-color);
+    font: var(--text-caption);
+    transform: translateX(-50%);
+}
+
+
