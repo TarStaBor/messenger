@@ -135,7 +135,7 @@ export const registrationButtons: IButton[] = [
         fill: 'link',
         text: 'Войти?',
         events: {
-            click: () => router.go('/sign-in'),
+            click: () => router.go('/'),
         },
     },
 ];

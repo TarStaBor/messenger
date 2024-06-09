@@ -49,7 +49,7 @@ class ChatsPage extends Block<IChatsPage> {
 
     protected componentDidMount(): void {
         if (!this.props.userId) {
-            router.go('/sign-in');
+            router.go('/');
         }
     }
 

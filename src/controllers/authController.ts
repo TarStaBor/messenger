@@ -75,7 +75,7 @@ class AuthController {
             const res = await authApi.signOut();
             if (res.status !== 200) throw new Error('Failed to sign out');
             store.set('user', null);
-            router.go('/sign-in');
+            router.go('/');
             ws.close();
         } catch (error) {
             console.error('@signOut: ', error);
