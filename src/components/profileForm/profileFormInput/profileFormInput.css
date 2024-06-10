@@ -1,0 +1,34 @@
+.profileFormInput {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    font: var(--text);
+}
+
+.profileFormInput_error {
+    color: var(--error-color);
+}
+
+.profileFormInput__input {
+    text-align: right;
+    outline: none;
+    border: none;
+    color: var(--text-secondary-color);
+}
+
+.profileFormInput__input:disabled {
+    background-color: unset;
+}
+
+.profileFormInput__input:focus {
+    color: var(--text-color);
+}
+
+.profileFormInput__error {
+    position: absolute;
+    right: 0;
+    bottom: -12px;
+    font: var(--text-caption);
+    color: var(--error-color);
+}

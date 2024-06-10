@@ -1,0 +1,44 @@
+.profileForm {
+    width: 100%;
+    max-width: 510px;
+    margin-top: 25px;
+}
+
+.profileForm__title {
+    margin: 0 0 40px;
+    text-align: center;
+    font: var(--h1);
+}
+
+.profileForm_buttons {
+    width: 100%;
+    max-width: 510px;
+    margin-top: 60px;
+    position: relative;
+}
+
+.profileForm__success {
+    position: absolute;
+    top: -24px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font: var(--text-caption);
+    color: var(--main-color);
+}
+
+.profileForm__error {
+    position: absolute;
+    top: -24px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font: var(--text-caption);
+    color: var(--error-color);
+}
+
+.profileForm__divider {
+    height: 1px;
+    margin: 10px 0;
+    background: var(--border-color);
+}

@@ -1,0 +1,9 @@
+.tooltip {
+    display: none;
+    z-index: 1;
+}
+
+.tooltip.tooltip_active {
+    display: block;
+    position: absolute;
+}

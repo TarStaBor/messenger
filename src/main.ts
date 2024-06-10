@@ -1,35 +1,22 @@
-import Handlebars from "handlebars";
-import * as Components from "./components";
-import { registerComponent } from "./core/registerComponent";
-import { PAGES, navigate } from "./core/navigate";
-import * as RightSide from "./pages/chat/right-side/right-side";
-import * as LeftSideHeader from "./pages/chat/left-side/left-side-header/left-side-header";
+import authController from './controllers/authController';
+import * as Pages from './pages';
+import router from './utils/router';
 
-Handlebars.registerPartial("FormAuth", Components.FormAuth);
-
-registerComponent("Button", Components.Button);
-registerComponent("ChatCard", Components.ChatCard);
-registerComponent("ChatList", Components.ChatList);
-registerComponent("Title", Components.Title);
-registerComponent("Link", Components.Link);
-registerComponent("Message", Components.Message);
-registerComponent("MessageList", Components.MessageList);
-registerComponent("InputField", Components.InputField);
-registerComponent("Input", Components.Input);
-registerComponent("ProfileButton", Components.ProfileButton);
-registerComponent("ErrorValid", Components.ErrorValid);
-registerComponent("RightSide", RightSide.RightSide);
-registerComponent("LeftSideHeader", LeftSideHeader.LeftSideHeader);
-
-document.addEventListener("DOMContentLoaded", () => navigate(PAGES.LOGIN));
-
-document.addEventListener("click", (e) => {
-  // @ts-expect-error: comment
-  const page = e.target.getAttribute("page");
-  if (page) {
-    if (page === "profile") navigate(PAGES.PROFILE_PAGE);
-    if (page === "chat") navigate(PAGES.CHAT);
-    e.preventDefault();
-    e.stopImmediatePropagation();
-  }
+document.addEventListener('DOMContentLoaded', async () => {
+    await authController.getUser();
+    router
+        .use('/', Pages.LoginPage, {
+            blockProps: { type: 'login' },
+            leaveIfIsAuth: true,
+            loginRoute: true,
+        })
+        .use('/messenger', Pages.ChatsPage, { protectedRoute: true, mainPageRoute: true })
+        .use('/404', Pages.ErrorPage, { blockProps: { code: 404 }, notFoundRoute: true })
+        .use('/500', Pages.ErrorPage, { blockProps: { code: 500 } })
+        .use('/sign-up', Pages.LoginPage, {
+            blockProps: { type: 'registration' },
+            leaveIfIsAuth: true,
+        })
+        .use('/settings', Pages.ProfilePage, { protectedRoute: true })
+        .start();
 });

@@ -1,23 +1,37 @@
-import Block, { Events } from "../../core/Block";
-import template from "./button.hbs?raw";
-
-interface IButton {
-  label: string;
-  type: string,
-  events?: Events;
-  onClick?: () => void;
-}
+import Block from '../../core/Block';
+import { Icon } from '../icon';
+import { IButton } from './types';
 
 export class Button extends Block<IButton> {
-  protected init(): void {
-    if (this.props.onClick) {
-      this.props.events = {
-        click: this.props.onClick,
-      };
+    constructor(props: IButton) {
+        super({
+            ...props,
+            Icon: props.icon ? new Icon({ icon: props.icon }) : undefined,
+        });
     }
-  }
 
-  protected render(): string {
-    return template;
-  }
+    render(): string {
+        return `
+            <button 
+                {{#if id}}id="{{id}}"{{/if}} 
+                type="{{type}}" 
+                    class="
+                    button button__variant_{{variant}} 
+                    button__fill_{{fill}} 
+                    {{#if align}}button__align_{{align}}{{/if}} 
+                    {{#if asIconButton}}button__with-icon{{/if}} 
+                    {{#if iconLast}}button__icon-last{{/if}}
+                    link-opacity
+                "
+            >
+                {{#if icon}}
+                    <div class="mainButton__icon">
+                        {{{ Icon }}}
+                    </div>
+                {{/if}}
+                {{text}}
+                
+            </button>
+        `;
+    }
 }

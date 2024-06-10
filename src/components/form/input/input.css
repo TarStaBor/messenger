@@ -1,0 +1,47 @@
+.formInputWrapper {
+    position: relative;
+    padding: 15px 0;
+}
+
+.formInput {
+    display: block;
+    position: relative;
+}
+
+.formInput::after {
+   display: block;
+   position: absolute;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   content: '';
+   height: 1px;
+   background-color: var(--main-color);
+ }
+
+.formInput__input {
+    height: 22px;
+    width: 100%;
+    font: var(--text);
+    outline: none;
+    border: none;
+}
+
+.formInput__input_error {
+    color: var(--error-color);
+}
+
+.formInput__label {
+    position: absolute;
+    left: 2px;
+    top: -16px;
+    font: var(--text);
+    color: var(--text-secondary-color);
+}
+
+.formInputWrapper__error {
+    position: absolute;
+    font: var(--text-caption);
+    color: var(--error-color);
+}
+

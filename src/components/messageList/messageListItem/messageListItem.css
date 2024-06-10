@@ -1,0 +1,37 @@
+.messageListItem {
+    max-width: 402px;
+    padding: 11px;
+    align-self: flex-end;
+    position: relative;
+    font: var(--text);
+    border-radius: 8px 8px 0;
+    background-color: var(--second-color);
+}
+
+.messageListItem_incoming {
+    align-self: flex-start;
+    background-color: var(--background-secondary-color);
+    border-radius: 0 8px 8px;
+}
+
+.messageListItem__info {
+    width: 35px;
+    display: inline-block;
+}
+
+.messageListItem__time {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 11px;
+    right: 11px;
+    font: var(--text-time);
+}
+
+.messageListItem .messageListItem__time {
+    color: var(--main-color);
+}
+
+.messageListItem_incoming .messageListItem__time {
+    color: var(--text-secondary-color);
+}

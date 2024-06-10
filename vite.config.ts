@@ -1,14 +1,6 @@
-import { defineConfig } from "vite";
-import handlebars from "vite-plugin-handlebars";
-import checker from "vite-plugin-checker";
+import { defineConfig } from 'vite';
 
 export default defineConfig({
-  plugins: [
-    handlebars(),
-    checker({
-      typescript: true,
-    }),
-  ],
   build: {
     outDir: "dist",
   },
@@ -16,3 +8,5 @@ export default defineConfig({
     port: 3000,
   },
 });
+
+

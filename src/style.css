@@ -1,35 +1,126 @@
-@import "/src/components/button/button.css";
-@import "/src/components/form-auth/form-auth.css";
-@import "/src/components/input/input.css";
-@import "/src/components/inputField/inputField.css";
-@import "/src/components/title/title.css";
-@import "/src/components/link/link.css";
-@import "/src/components/profile-button/profile-button.css";
-@import "/src/components/errorValid/errorValid.css";
-@import "/src/components/chat-card/chat-card.css";
-@import "/src/components/message/message.css";
-@import "/src/pages/login/login.css";
-@import "/src/pages/chat/chat.css";
-@import "/src/pages/chat/right-side/right-side.css";
-@import "/src/pages/chat/left-side/left-side-header/left-side-header.css";
-@import "/src/pages/error-page404/error-page404.css";
-@import "/src/pages/profile/profile.css";
+@import url('./vendor/normalize.css');
+@import url('/src/components/button/button.css');
+@import url('/src/components/avatar/avatar.css');
+@import url('/src/components/changeAvatar/changeAvatar.css');
+@import url('/src/components/chatSection/chatSection.css');
+@import url('/src/components/chatList/chatListItem/chatListItem.css');
+@import url('/src/components/chatSearchInput/chatSearchInput.css');
+@import url('/src/components/form/form.css');
+@import url('/src/components/form/input/input.css');
+@import url('/src/components/icon/icon.css');
+@import url('/src/components/messageForm/messageForm.css');
+@import url('/src/components/messageList/messageList.css');
+@import url('/src/components/messageList/messageListItem/messageListItem.css');
+@import url('/src/components/modal/modal.css');
+@import url('/src/components/newChatForm/newChatForm.css');
+@import url('/src/components/profileForm/profileForm.css');
+@import url('/src/components/profileForm/profileFormInput/profileFormInput.css');
+@import url('/src/components/settingsMenu/chatSettings/chatSettings.css');
+@import url('/src/components/setUserAvatarButton/setUserAvatarButton.css');
+@import url('/src/components/tooltip/tooltip.css');
+@import url('/src/pages/chatsPage/chatsPage.css');
+@import url('/src/pages/errorPage/errorPage.css');
+@import url('/src/pages/loginPage/loginPage.css');
+@import url('/src/pages/profilePage/profilePage.css');
 
 :root {
+  --h1: 700 22px/1.4 'PT Sans', 'arial', 'helvetica Neue', 'helvetica', sans-serif;
+  --h2: 700 20px/1.4 'PT Sans', 'arial', 'helvetica Neue', 'helvetica', sans-serif;
+  --h3: 700 18px/1.4 'PT Sans', 'arial', 'helvetica Neue', 'helvetica', sans-serif;
+  --h4: 700 16px/1.4 'PT Sans', 'arial', 'helvetica Neue', 'helvetica', sans-serif;
+  --h5: 700 12px/1.4 'PT Sans', 'arial', 'helvetica Neue', 'helvetica', sans-serif;
+  --text: 400 16px/1 'PT Sans', 'arial', 'helvetica Neue', 'helvetica', sans-serif;
+  --text-time: 400 9px/1 'PT Sans', arial, 'helvetica Neue', helvetica, sans-serif;
+  --text-caption: 400 13px/1.2 'PT Sans', 'arial', 'helvetica Neue', 'helvetica', sans-serif;
   --main-color: #3369f3;
   --second-color: #e4edfd;
   --error-color: #ff2f2f;
   --text-color: #1e1e1e;
+  --text-fill-color: #FFF;
   --text-secondary-color: #999;
   --border-color: #EAEAEA;
   --background-color: #EFEFEF;
   --background-secondary-color: #FBFBFB;
 
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, system-ui, Avenir, Helvetica, arial, sans-serif;
 }
 
 body {
-margin: 0;
+  height: 100vh;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  padding: 0;
+  list-style: none;
+}
+
+ .shadow-box {
+  height: 100%;
+  min-height: inherit;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 14%);
+  background: #fff;
+ }
+
+.shadow-box_small-padding {
+  padding: 15px;
+}
+
+.spinner {
+  position: relative;
+}
+
+.spinner::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: calc(50% - 20px);
+  left: calc(50% - 20px);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: url('/public/telegram.svg');
+  animation: spin 2s ease-in-out infinite;
+  box-shadow: 0 0 20px 0 rgba(26,116,184,90%);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1.5);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
 }
 
 .link-opacity {
