@@ -1,0 +1,8 @@
+{
+    "spec": "src/**/*.spec.ts",
+    "loader": "ts-node/esm",
+    "require": ["./mochaSetup.js"],
+    "$schema": "https://json.schemastore.org/mochard",
+    "extensions": ["ts"]
+}
+
