@@ -111,7 +111,7 @@ class ChatWebSocket {
         if (this.timerId || !this.socket) {
             return;
         }
-        this.timerId = setInterval(() => {
+        this.timerId = window.setInterval(() => {
             this.socket?.send(
                 JSON.stringify({
                     type: 'ping',

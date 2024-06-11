@@ -4,8 +4,16 @@
         "es2021": true
     },
     "extends": ["airbnb/base", "airbnb-typescript/base", "plugin:@typescript-eslint/recommended"],
-    "overrides": [],
-    "ignorePatterns": ["dist", "node_modules", ".eslintrc", "vite.config.ts"],
+    "overrides": [
+        {
+            "files": ["**/*.spec.ts"],
+            "rules": {
+                "no-unused-expressions": "off",
+                "@typescript-eslint/no-unused-expressions": "off"
+            }
+        }
+    ],
+    "ignorePatterns": ["dist", "node_modules", ".eslintrc", "vite.config.ts", "mochaSetup.js"],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": "latest",
