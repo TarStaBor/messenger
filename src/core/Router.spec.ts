@@ -34,8 +34,6 @@ describe('Router tests', () => {
         const historyForwardStub = sinon.stub(router.history, 'forward');
 
         router.forward();
-
-        // eslint-disable-next-line
         expect(historyForwardStub.called).to.be.true;
         historyForwardStub.restore();
     });
@@ -45,8 +43,6 @@ describe('Router tests', () => {
         const historyForwardStub = sinon.stub(router.history, 'back');
 
         router.back();
-
-        // eslint-disable-next-line
         expect(historyForwardStub.calledOnce).to.be.true;
         historyForwardStub.restore();
     });

@@ -55,7 +55,6 @@ describe('Block tests', () => {
         const event = new MouseEvent('click');
         componentWithStub.element?.dispatchEvent(event);
 
-        // eslint-disable-next-line
         expect(clickHandlerStub.calledOnce).to.be.true;
     });
 
@@ -68,7 +67,6 @@ describe('Block tests', () => {
         document.body.append(element!);
         clock.next();
 
-        // eslint-disable-next-line
         expect(spyCDM.calledOnce).to.be.true;
     });
 
