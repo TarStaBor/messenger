@@ -105,5 +105,4 @@ describe('HTTPTransport tests', () => {
         const result = await (request as unknown as Promise<SinonFakeXMLHttpRequest>);
         expect(result.method).to.be.equal('DELETE');
     });
-
 });
