@@ -18,7 +18,7 @@ class TestComponent extends Block<ITestComponent> {
 }
 
 describe('Block tests', () => {
-    const spanText = 'mock text';
+    const spanText = 'mock text test';
     const buttonText = 'mock button text';
     let component: Block<ITestComponent>;
 
