@@ -35,6 +35,7 @@ describe('Router tests', () => {
 
         router.forward();
 
+        // eslint-disable-next-line
         expect(historyForwardStub.called).to.be.true;
         historyForwardStub.restore();
     });
@@ -45,6 +46,7 @@ describe('Router tests', () => {
 
         router.back();
 
+        // eslint-disable-next-line
         expect(historyForwardStub.calledOnce).to.be.true;
         historyForwardStub.restore();
     });
